@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import Images from "../assets/images";
-import InputField from "../shared/InputField";
-import Button from "../shared/button";  
+import InputField from "../shared/InputField.jsx";
+import Button from "../shared/Button.jsx";  
 import { Link } from "react-router-dom";
 
 function Login(){
