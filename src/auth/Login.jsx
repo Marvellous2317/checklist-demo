@@ -20,7 +20,7 @@ function Login(){
         <div className="absolute inset-0 flex flex-col  p-6 pb-12 md:p-10 lg:p-20">
           
          <div className="flex flex-row gap-3 ">
-          <FaCheckCircle className="text-primary text-4xl bg-[#006953]" />
+          <FaCheckCircle className="text-primary text-2xl bg-[#006953]" />
           <h1 className="mt-2 font-geist text-lg font-semibold text-[#006953]">
             DailyCheck
           </h1>                     
