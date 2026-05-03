@@ -83,8 +83,7 @@ export default function ChecklistForm() {
             value={description}
             onChange={(e) => setDesc(e.target.value)}
             placeholder="Briefly explain the purpose of this checklist..."
-            className="w-full border border-gray-200 rounded-lg px-4 py-2.5
-                       text-sm text-gray-800 placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-[#0F6E56]/30 focus:border-[#0F6E56] transition"
+            className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm text-gray-800 placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-[#0F6E56]/30 focus:border-[#0F6E56] transition"
           />
         </div>
 

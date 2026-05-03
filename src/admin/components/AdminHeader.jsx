@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function AdminHeader() {
   return (
     <header className="sticky top-0 z-10 flex items-center justify-between h-14 px-8 bg-white border-b border-gray-200">
 

@@ -13,7 +13,7 @@ export default function UserSettings() {
   const userRole = 'Super Admin';
 
   return (
-    <div className="w-full min-h-screen max-h-screen">
+    <div className="w-full min-h-screen max-h-screen  max-auto ">
       <header className="flex flex-col md:flex-row gap-3 md:gap-0 w-full px-8 py-2.5 border-b border-secondary-200 md:items-center items-start justify-between">
         <div className="flex flex-col gap-1 md:gap-2">
           <h1 className="text-primary text-xl font-medium font-geist">
@@ -28,7 +28,6 @@ export default function UserSettings() {
       <section className="lg:max-w-300 lg:mx-auto lg:h-fit">
         <div className="flex flex-row justify-between items-center px-8 mt-5 mb-4">
           
-
           <Button
             type="button"
             onClick={() => {}}
@@ -86,16 +85,15 @@ export default function UserSettings() {
       </section>
 
       <section className="pb-10 lg:max-w-300 lg:mx-auto lg:h-fit">
-        <Button
-          type="button"
-          onClick={() => {}}
-          className="bg-primary-200 gap-1 p-2.5 px-4 rounded-[10px] mt-6.5 ml-auto mr-5.5 lg:mr-31 lg:mt-30 "
-        >
-          <p className="text-white font-geist font-medium text-sm">
-            Save Changes
-          </p>
-        </Button>
-      </section>
+       <Button
+  type="button"
+  onClick={() => {}}
+  className="bg-[#006953] gap-1 p-2.5 px-4 rounded-[10px] mt-6.5 ml-auto mr-7 lg:mt-30">
+  <p className="text-white font-geist font-medium text-sm">
+    Save Changes
+  </p>
+   </Button>
+  </section>
     </div>
   );
 }

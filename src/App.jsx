@@ -8,6 +8,7 @@ import AdminSettings from "./admin/AdminSettings";
 import AdminLayout from "./admin/AdminLayout";
 import UserSettings from "./user/UserSettings";
 import UserLayout from "./user/UserLayout";
+import UserChecklist from "./user/components/UserChecklist";
 
 
 
@@ -24,6 +25,7 @@ function App(){
       
       <Route path="/user" element={<UserLayout/>}>
       <Route index element={<UserDashboard/>}/>
+      <Route path="/user/checklist" element={<UserChecklist />} />  
       <Route path="/user/settings" element={<UserSettings/>}/>
       </Route>
 

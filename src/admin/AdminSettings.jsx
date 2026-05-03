@@ -85,16 +85,15 @@ export default function AdminSettings() {
       </section>
 
       <section className="pb-10 lg:max-w-300 lg:mx-auto lg:h-fit">
-        <Button
-          type="button"
-          onClick={() => {}}
-          className="bg-primary-200 gap-1 p-2.5 px-4 rounded-[10px] mt-6.5 ml-auto mr-5.5 lg:mr-31 lg:mt-30 "
-        >
-          <p className="text-white font-geist font-medium text-sm">
-            Save Changes
-          </p>
-        </Button>
-      </section>
+       <Button
+  type="button"
+  onClick={() => {}}
+  className="bg-[#006953] gap-1 p-2.5 px-4 rounded-[10px] mt-6.5 ml-auto mr-7 lg:mt-30">
+  <p className="text-white font-geist font-medium text-sm">
+    Save Changes
+  </p>
+   </Button>
+  </section>
     </div>
   );
 }

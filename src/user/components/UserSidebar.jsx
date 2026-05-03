@@ -1,27 +1,49 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { IoIosCheckmarkCircle } from "react-icons/io";
+import React from "react";
+import { CheckCircle, Settings } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
-function UserSidebar () {
-  
+const NAV_ITEMS = [
+  { label: "Checklists",    Icon: CheckCircle, to: "/user"          },
+  { label: "Settings", Icon: Settings,    to: "/user/settings" },
+];
+
+export default function UserSidebar() {
+  const { pathname } = useLocation(); // ← drive active state from the URL, not hardcoded
+
   return (
-    <aside className="sidebar">
-      <div className="sidebar-brand">
-        <h3>DailyCheck</h3>
-        <p>PRODUCTIVITY HUB</p>
-      </div>
-    <nav className="sidebar-nav">
-      <NavLink to="/" className="nav-item">
-        <IoIosCheckmarkCircle /> Tasks
-      </NavLink>
-      <NavLink to="/calendar" className="nav-item">
-        <IoIosCheckmarkCircle  /> Calendar
-      </NavLink>
-      <NavLink to="/settings" className="nav-item">
-        <IoIosCheckmarkCircle  /> Settings
-      </NavLink>
-    </nav>
-  </aside>)
-};
+    <aside className="w-48 shrink-0 bg-white border-r border-gray-200 flex flex-col gap-8 px-4 py-6">
 
-export default UserSidebar;
+      {/* Brand block */}
+      <div className="flex flex-col gap-0.5 px-2">
+        <span className="text-[#0F6E56] font-bold text-base tracking-tight">
+          DailyCheck
+        </span>
+        <span className="text-[10px] tracking-widest text-gray-400 uppercase">
+          Productivity Hub
+        </span>
+      </div>
+
+      {/* Nav links */}
+      <nav className="flex flex-col gap-0.5">
+        {NAV_ITEMS.map(({ label, Icon, to }) => {
+          const active = pathname === to;
+          return (
+            <Link
+              key={label}
+              to={to}
+              className={`flex items-center gap-2.5 px-3 py-2 rounded-md text-sm transition-colors
+                ${active
+                  ? "bg-[#E1F5EE] text-[#0F6E56] font-medium"
+                  : "text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                }`}
+            >
+              <Icon size={16} className={active ? "text-[#0F6E56]" : "text-gray-400"} />
+              {label}
+            </Link>
+          );
+        })}
+      </nav>
+
+    </aside>
+  );
+}

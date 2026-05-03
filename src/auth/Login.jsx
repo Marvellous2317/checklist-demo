@@ -4,9 +4,42 @@ import Images from "../assets/images";
 import InputField from "../shared/InputField.jsx";
 import Button from "../shared/Button.jsx";  
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 function Login(){
 
+  // 1. Add useState at the top of your component
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+const navigate = useNavigate();
+
+ // Dummy credentials (delete these when your API is ready)
+const DUMMY_USERS = [
+  { email: "marvellousbraimah71@gmail.com", password: "admin123", role: "admin" },
+  { email: "braimahmarvellous16@gmail.com", password: "user123", role: "user" },
+];
+
+const handleLogin = (e) => {
+  e.preventDefault();
+
+  const email = e.target.email.value;
+  const password = e.target.password.value;
+
+  // Find a matching user
+  const matchedUser = DUMMY_USERS.find(
+    (u) => u.email === email && u.password === password
+  );
+
+  if (!matchedUser) {
+    alert("Invalid email or password.");
+    return;
+  }
+
+  setTimeout(() => {
+    navigate(matchedUser.role === "admin" ? "/admin" : "/user");
+  }, 1000);
+};
   
     return(
        <div className="flex h-screen w-full flex-col md:flex-row">
@@ -42,15 +75,16 @@ function Login(){
           <p className="mb-6 mt-1 font-geist text-xs text-tertiary md:mb-7">
             Please enter your details to sign in.
           </p>
-          <form  className="mt-6 space-y-4">
+          <form  className="mt-6 space-y-4" onSubmit={handleLogin}>
             <InputField
               id="email"
               name="email"
               label="Email address"
               type="email"
               placeholder="you@example.com"
-              
+              onChange={(e) => setEmail(e.target.value)}
               required
+              value={email}
               autoComplete="email"
             />
 
@@ -60,8 +94,9 @@ function Login(){
               label="Password"
               type="password"
               placeholder="Enter your password"
-              
+              onChange={(e) => setPassword(e.target.value)}
               required
+              value={password}
               autoComplete="current-password"
             />
 

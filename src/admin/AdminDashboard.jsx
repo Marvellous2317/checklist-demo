@@ -1,6 +1,6 @@
 import React from "react";
 import AdminSidebar from "./components/AdminSidebar.jsx";
-import Header from "../shared/Header.jsx";
+import Header from "./components/AdminHeader.jsx";
 import ChecklistForm from "./components/ChecklistForm.jsx";
 
 export default function AdminDashboard() {
