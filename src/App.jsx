@@ -9,6 +9,7 @@ import AdminLayout from "./admin/AdminLayout";
 import UserSettings from "./user/UserSettings";
 import UserLayout from "./user/UserLayout";
 import UserChecklist from "./user/components/UserChecklist";
+import CreateUser from "./auth/CreateUser";
 
 
 
@@ -17,7 +18,8 @@ function App(){
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword/>}/>
-
+      <Route path="/create-user" element={<CreateUser/>}/>
+      
       <Route path="/admin" element={<AdminLayout />}>
         <Route index element={<AdminDashboard/>}/>
         <Route path="/admin/settings" element={<AdminSettings/>}/>

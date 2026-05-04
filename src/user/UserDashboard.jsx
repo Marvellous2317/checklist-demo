@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { Plus, Upload, History, HelpCircle, CheckCircle2, TrendingUp, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 
+
 // ── Mock data (replace with API calls) ────────────────────────
 const ASSIGNED_CHECKLISTS = [
-  { id: 1, title: "Clarity and Focus",    location: "Main Warehouse", due: "11:00 AM", status: "pending"},
+  { id: 1, title: "Morning Routine",    location: "Main Warehouse", due: "11:00 AM", status: "pending"},
   { id: 2, title: "Safety & Hygiene Protocol", location: "Front Office",   due: "1:00 PM",  status: "pending"  },
   { id: 3, title: "Store Opening Routine",     location: "Retail Floor",  due: "Overdue",   status: "overdue"  },
 ];
@@ -87,12 +88,14 @@ export default function UserDashboard() {
                         Overdue
                       </span>
                     )}
+                    <Link to={`/user/checklist`}>
                     <button
                       onClick={() => navigate(`/user/checklist/${item.id}`)}
-                      className="text-xs font-medium px-4 py-1.5 border border-[#0F6E56] text-[#0F6E56] rounded-lg hover:bg-[#E1F5EE] transition"
+                      className="text-xs font-medium px-4 py-1.5 border border-[#22C55E] text-[#22C55E] rounded-lg hover:bg-[#E1F5EE] transition"
                     >
                       {item.status === "overdue" ? "Resume" : "Start"}
                     </button>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -103,7 +106,7 @@ export default function UserDashboard() {
           <div className="grid grid-cols-2 gap-5">
 
             {/* Compliance Score */}
-            <div className="bg-[#0F6E56] rounded-2xl p-5 text-white">
+            <div className="bg-[#22C55E] rounded-2xl p-5 text-white">
               <TrendingUp size={18} className="mb-2 opacity-80" />
               <p className="text-3xl font-bold">84%</p>
               <p className="text-sm opacity-70 mt-0.5">Weekly Compliance Score</p>
@@ -114,7 +117,7 @@ export default function UserDashboard() {
 
             {/* Tasks completed */}
             <div className="bg-white border border-gray-200 rounded-2xl p-5">
-              <CheckCircle2 size={18} className="text-[#0F6E56] mb-2" />
+              <CheckCircle2 size={18} className="text-[#22C55E] mb-2" />
               <p className="text-3xl font-bold text-gray-900">12 / 15</p>
               <p className="text-sm text-gray-400 mt-0.5">Tasks Completed Today</p>
               <div className="flex gap-1 mt-4">

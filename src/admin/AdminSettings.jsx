@@ -88,7 +88,7 @@ export default function AdminSettings() {
        <Button
   type="button"
   onClick={() => {}}
-  className="bg-[#006953] gap-1 p-2.5 px-4 rounded-[10px] mt-6.5 ml-auto mr-7 lg:mt-30">
+  className="bg-[#22C55E] gap-1 p-2.5 px-4 rounded-[10px] mt-6.5 ml-auto mr-7 lg:mt-30">
   <p className="text-white font-geist font-medium text-sm">
     Save Changes
   </p>

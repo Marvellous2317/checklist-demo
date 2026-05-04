@@ -46,7 +46,7 @@ export default function ChecklistForm() {
   };
 
   return (
-    <div className="max-w-2xl">
+    <div className="max-w-2xl ">
 
       {/* ── Page heading ── */}
       <div className="mb-6">
@@ -96,7 +96,7 @@ export default function ChecklistForm() {
           </h2>
           <button
             onClick={addItem}
-            className="flex items-center gap-1.5 text-sm font-medium text-[#0F6E56] hover:text-[#0a5240] transition-colors"
+            className="flex items-center gap-1.5 text-sm font-medium text-[#22C55E] hover:text-[#22C55E] transition-colors"
           >
             <PlusCircle size={16} />
             ADD ITEM
@@ -140,7 +140,7 @@ export default function ChecklistForm() {
           </button>
           <button
             onClick={handleSave}
-                   className="px-5 py-2 text-sm font-medium text-white bg-[#0F6E56] rounded-lg hover:bg-[#0a5240] transition"
+                   className="px-5 py-2 text-sm font-medium text-white bg-[#22C55E] rounded-lg hover:bg-[#22C55E] transition"
           >
             Save Checklist
           </button>

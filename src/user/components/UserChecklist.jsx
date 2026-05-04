@@ -46,8 +46,7 @@ export default function UserChecklist() {
       {/* Back link */}
       <button
         onClick={() => navigate("/user")}
-        className="flex items-center gap-1.5 text-xs text-gray-400
-                   hover:text-gray-600 transition mb-6 uppercase tracking-wider"
+        className="flex items-center gap-1.5 hover:text-[#22C55E]  text-xs text-gray-400 transition mb-6 uppercase tracking-wider"
       >
         <ArrowLeft size={13} /> Back to Overview
       </button>
@@ -65,12 +64,12 @@ export default function UserChecklist() {
             <circle cx="18" cy="18" r="15.9"
               fill="none" stroke="#e5e7eb" strokeWidth="2.5" />
             <circle cx="18" cy="18" r="15.9"
-              fill="none" stroke="#0F6E56" strokeWidth="2.5"
+              fill="none" stroke="#22C55E" strokeWidth="2.5"
               strokeDasharray={`${(answered / total) * 100} 100`}
               strokeLinecap="round" />
           </svg>
           <span className="absolute inset-0 flex items-center justify-center
-                          text-sm font-bold text-[#0F6E56]">
+                          text-sm font-bold text-[#22C55E]">
             {answered}/{total}
           </span>
         </div>
@@ -113,8 +112,8 @@ export default function UserChecklist() {
                   onClick={() => mark(item.id, "pass")}
                   className={`w-8 h-8 rounded-full border flex items-center justify-center text-sm transition
                               ${status === "pass"
-                                ? "bg-[#0F6E56] border-[#0F6E56] text-white"
-                                : "border-gray-300 text-gray-400 hover:border-[#0F6E56] hover:text-[#0F6E56]"}`}
+                                ? "bg-[#22C55E] border-[#22C55E] text-white"
+                                : "border-gray-300 text-gray-400 hover:border-[#22C55E] hover:text-[#22C55E]"}`}
                 >✓</button>
               </div>
             </div>
@@ -124,7 +123,7 @@ export default function UserChecklist() {
 
       {/* Pro tip */}
       <div className="border border-dashed border-gray-300 rounded-2xl p-4 mb-7 flex gap-3 items-start">
-        <Lightbulb size={16} className="text-[#0F6E56] mt-0.5 shrink-0" />
+        <Lightbulb size={16} className="text-[#22C55E] mt-0.5 shrink-0" />
         <div>
           <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1">
             Pro Tip
@@ -139,7 +138,7 @@ export default function UserChecklist() {
       <div className="flex justify-center">
         <button
           onClick={handleSave}
-          className="flex items-center gap-2 bg-[#0F6E56] text-white px-8 py-3 rounded-xl text-sm font-semibold hover:bg-[#0a5240] transition"
+          className="flex items-center gap-2 bg-[#22C55E] text-white px-8 py-3 rounded-xl text-sm font-semibold hover:bg-[#0a5240] transition"
         >
           <Save size={15} />
           Save Answers

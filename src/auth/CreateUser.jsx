@@ -8,9 +8,10 @@ import { useNavigate } from 'react-router-dom';
 import Images from "../assets/images.js";
 
 
-function Login(){
+function CreateUser(){
 
   // 1. Add useState at the top of your component
+const [name, setName] =useState("");
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const navigate = useNavigate();
@@ -21,9 +22,10 @@ const DUMMY_USERS = [
   { email: "braimahmarvellous16@gmail.com", password: "user123", role: "user" },
 ];
 
-const handleLogin = (e) => {
+const handleCreateUser = (e) => {
   e.preventDefault();
-
+ 
+  const name = e.target.name.value;
   const email = e.target.email.value;
   const password = e.target.password.value;
 
@@ -85,12 +87,24 @@ const handleLogin = (e) => {
   <section className="flex w-full flex-col items-center justify-start overflow-y-auto p-4 md:w-1/2 md:p-10 lg:p-16">
     <div className="w-full max-w-99">
       <h1 className="font-geist text-xl font-semibold text-primary">
-        Welcome Back
+        Welcome!
       </h1>
       <p className="mb-6 mt-1 font-geist text-xs text-tertiary md:mb-7">
-        Please enter your details to sign in.
+        Please enter your details to create your account.
       </p>
-      <form className="mt-6 space-y-4" onSubmit={handleLogin}>
+      <form className="mt-6 space-y-4" onSubmit={handleCreateUser}>
+        <InputField
+          id="name"
+          name="name"
+          label="Full Name"
+          type="text"
+          placeholder="Enter your full name"
+          onChange={(e) => setName(e.target.value)}
+          required
+          value={name}
+          autoComplete="name"
+        />
+        
         <InputField
           id="email"
           name="email"
@@ -126,18 +140,8 @@ const handleLogin = (e) => {
           type="submit"
           className="mt-3 w-full rounded-2xl bg-[#22C55E] px-4 py-3.5 font-geist text-base font-medium text-white hover:opacity-90 flex items-center justify-center"
         >
-          Login
+          Sign Up
         </Button>
-
-        <div className="flex gap-1.5 items-center justify-center mt-4">
-          <p className="text-xs font-geist text-primary  "> Don't have an account?</p>
-        <Link
-          to="/create-user"
-          className="text-xs font-geist flex items-end justify-end  text-primary hover:underline text-[#22C55E]"
-        >
-          Sign up
-        </Link>
-        </div>
       </form>
     </div>
   </section>
@@ -146,4 +150,4 @@ const handleLogin = (e) => {
     )
 };
 
-export default Login;
+export default CreateUser;

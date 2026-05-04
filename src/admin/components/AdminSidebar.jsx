@@ -15,7 +15,7 @@ export default function AdminSidebar() {
 
       {/* Brand block */}
       <div className="flex flex-col gap-0.5 px-2">
-        <span className="text-[#0F6E56] font-bold text-base tracking-tight">
+        <span className="text-[#22C55E] font-bold text-base tracking-tight">
           DailyCheck
         </span>
         <span className="text-[10px] tracking-widest text-gray-400 uppercase">
@@ -33,11 +33,11 @@ export default function AdminSidebar() {
               to={to}
               className={`flex items-center gap-2.5 px-3 py-2 rounded-md text-sm transition-colors
                 ${active
-                  ? "bg-[#E1F5EE] text-[#0F6E56] font-medium"
+                  ? "bg-[#E1F5EE] text-[#22C55E] font-medium"
                   : "text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 }`}
             >
-              <Icon size={16} className={active ? "text-[#0F6E56]" : "text-gray-400"} />
+              <Icon size={16} className={active ? "text-[#22C55E]" : "text-gray-400"} />
               {label}
             </Link>
           );
